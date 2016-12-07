@@ -27,9 +27,7 @@ public class TodoController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Todo>> findAll() {
-        List<Todo> todos = new ArrayList<>();
-        todoDAO.findAll().forEach((todos::add));
-        return new ResponseEntity<List<Todo>>(todos, HttpStatus.OK);
+        return new ResponseEntity<>(getAllTodos(), HttpStatus.OK);
     }
 
     //@RequestMapping(name = "/id", method = RequestMethod.GET)
@@ -50,5 +48,9 @@ public class TodoController {
     public void deleteById(@RequestParam Integer id) {
         // TODO: change to /{id}
         todoDAO.delete(id);
+    }
+
+    private List<Todo> getAllTodos() {
+        return (List<Todo>) todoDAO.findAll();
     }
 }
