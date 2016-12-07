@@ -3,7 +3,12 @@ package com.mreilaender.todolist.controller;
 import com.mreilaender.todolist.dao.TodoDAO;
 import com.mreilaender.todolist.entities.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author manuel
@@ -21,10 +26,17 @@ public class TodoController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Todo read(@RequestParam Integer id) {
-        // TODO: change to /{id}
-        return todoDAO.findOne(id);
+    public ResponseEntity<List<Todo>> findAll() {
+        List<Todo> todos = new ArrayList<>();
+        todoDAO.findAll().forEach((todos::add));
+        return new ResponseEntity<List<Todo>>(todos, HttpStatus.OK);
     }
+
+    //@RequestMapping(name = "/id", method = RequestMethod.GET)
+    //public Todo find(@RequestParam Integer id) {
+    //    // TODO: change to /{id}
+    //    return todoDAO.findOne(id);
+    //}
 
     @RequestMapping(method = RequestMethod.PUT)
     public Todo update(@RequestParam Todo todo) {
