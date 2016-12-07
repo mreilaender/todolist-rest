@@ -20,14 +20,6 @@ public class Todo {
     @Column(name = "name")
     private String name;
 
-    public Todo() {
-    }
-
-    public Todo(boolean done, String name) {
-        this.done = done;
-        this.name = name;
-    }
-
     public int getId() {
         return id;
     }
