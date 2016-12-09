@@ -17,7 +17,7 @@ public class TodoConfig {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                //registry.addMapping("/**").allowedOrigins("https://mytodolist-react.herokuapp.com/");
+                registry.addMapping("/**").allowedOrigins("https://mytodolist-react.herokuapp.com/");
             }
         };
     }
