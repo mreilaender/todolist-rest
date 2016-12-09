@@ -25,6 +25,7 @@ public class TodoController {
         return todoDAO.save(todo);
     }
 
+    @CrossOrigin(origins = "https://mytodolist-rest.herokuapp.com/todo")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Todo>> findAll() {
         return new ResponseEntity<>(getAllTodos(), HttpStatus.OK);
