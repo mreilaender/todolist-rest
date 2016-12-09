@@ -28,8 +28,8 @@ public class TodoController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Todo>> findAll(@RequestHeader HttpHeaders headers) {
-        return new ResponseEntity<>(getAllTodos(), headers, HttpStatus.OK);
+    public ResponseEntity<List<Todo>> findAll() {
+        return new ResponseEntity<>(getAllTodos(), HttpStatus.OK);
     }
 
     //@RequestMapping(name = "/id", method = RequestMethod.GET)

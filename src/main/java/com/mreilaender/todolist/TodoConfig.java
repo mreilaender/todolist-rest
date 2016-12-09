@@ -12,12 +12,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 public class TodoConfig {
+
     @Bean
     public WebMvcConfigurer corseConfigurer() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedOrigins("https://mytodolist-react.herokuapp.com/");
+                registry.addMapping("/**").allowedOrigins("http://localhost/");
             }
         };
     }
