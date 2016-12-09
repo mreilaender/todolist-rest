@@ -15,6 +15,7 @@ import java.util.List;
  * @author manuel
  * @version 12/7/16
  */
+@CrossOrigin(origins = "https://mytodolist-react.herokuapp.com/")
 @RestController
 @RequestMapping("/todo")
 public class TodoController {
