@@ -23,6 +23,7 @@ public class TodoConfig {
                 registry
                         .addMapping("/**")
                         .allowedOrigins("https://mytodolist-react.herokuapp.com//")
+                        .allowedOrigins("http://localhost:3000")
                         .exposedHeaders("Access-Control-Allow-Origin");
             }
          };
