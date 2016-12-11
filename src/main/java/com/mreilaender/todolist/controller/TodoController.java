@@ -32,12 +32,6 @@ public class TodoController {
         return new ResponseEntity<>(getAllTodos(), HttpStatus.OK);
     }
 
-    //@RequestMapping(name = "/id", method = RequestMethod.GET)
-    //public Todo find(@RequestParam Integer id) {
-    //    // TODO: change to /{id}
-    //    return todoDAO.findOne(id);
-    //}
-
     @RequestMapping(method = RequestMethod.PUT)
     public Todo update(@RequestParam Todo todo) {
         Todo old = todoDAO.findOne(todo.getId());
