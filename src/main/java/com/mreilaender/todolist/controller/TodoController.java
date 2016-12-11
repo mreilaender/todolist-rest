@@ -14,7 +14,6 @@ import java.util.List;
  * @author manuel
  * @version 12/7/16
  */
-@CrossOrigin(origins = "https://mytodolist-react.herokuapp.com/")
 @RestController
 @EnableWebMvc
 @RequestMapping("/todo")
@@ -27,6 +26,7 @@ public class TodoController {
         return todoDAO.save(todo);
     }
 
+    @CrossOrigin(origins = "https://mytodolist-react.herokuapp.com/")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Todo>> findAll() {
         return new ResponseEntity<>(getAllTodos(), HttpStatus.OK);
