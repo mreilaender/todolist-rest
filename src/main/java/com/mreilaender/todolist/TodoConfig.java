@@ -22,9 +22,9 @@ public class TodoConfig {
             public void addCorsMappings(CorsRegistry registry) {registry.addMapping("/**").allowedOrigins("https://mytodolist-react.herokuapp.com/");
                 registry
                         .addMapping("/**")
-                        .allowedOrigins("https://mytodolist-react.herokuapp.com//")
+                        .allowedOrigins("https://mytodolist-react.herokuapp.com/")
                         .allowedOrigins("http://localhost:3000")
-                        .exposedHeaders("Access-Control-Allow-Origin");
+                        .allowedMethods("GET");
             }
          };
     }
