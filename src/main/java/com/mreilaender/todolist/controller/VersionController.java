@@ -1,4 +1,4 @@
-package com.mreilaender.todolist;
+package com.mreilaender.todolist.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

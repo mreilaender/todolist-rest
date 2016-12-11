@@ -3,12 +3,10 @@ package com.mreilaender.todolist.controller;
 import com.mreilaender.todolist.dao.TodoDAO;
 import com.mreilaender.todolist.entities.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
