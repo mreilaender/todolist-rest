@@ -22,7 +22,7 @@ public class TodoConfig {
             public void addCorsMappings(CorsRegistry registry) {registry.addMapping("/**").allowedOrigins("https://mytodolist-react.herokuapp.com/");
                 registry
                         .addMapping("/**")
-                        .allowedOrigins("*");
+                        .allowedOrigins("http://mytodolist-react.herokuapp.com");
                         //.allowedOrigins("http://localhost:3000");
             }
          };
